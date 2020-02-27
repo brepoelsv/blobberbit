@@ -13,9 +13,9 @@ export default () => {
     $('#chooseServerSelect').append(option);
     $('#currentServer').text(process.env.DOMAIN);
     if (process.env.DOMAIN !== 'localhost') {
-      vars.serverHost = `wss://${process.env.DOMAIN}`;
+      vars.serverHost = `wss://blobber.io`;
     } else {
-      vars.serverHost = `ws://${process.env.IP}:${process.env.PORT}`;
+      vars.serverHost = `ws://blobber.io:${process.env.PORT}`;
     }
   }
 
