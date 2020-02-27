@@ -29,12 +29,12 @@ role :app,        "blobber.io"
 namespace :deploy do
   desc "Install node modules non-globally"
   task :npm_install do
-    run ". /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm install"
+    run "bash -c '. /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm install'"
   end
 
   desc "Webpack build"
   task :webpack do
-    run ". /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm run build"
+    run "bash -c '. /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm run build'"
   end
 
   desc "Babel cache"
