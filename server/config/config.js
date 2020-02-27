@@ -44,5 +44,5 @@ export const ENV = {
   env: process.env.NODE_ENV,
   domain: process.env.DOMAIN ? process.env.DOMAIN : 'localhost',
   ip: process.env.IP ? process.env.IP : 'localhost',
-  port: process.env.PORT ? process.env.PORT : '3000'
+  port: process.env.PORT ? process.env.PORT : '4000'
 };
