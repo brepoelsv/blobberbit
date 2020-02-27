@@ -80,7 +80,7 @@ let timer = setTimeout(function updateServerList() {
         }
         if (server) {
           s.users = server.current_players;
-          s.available = true;
+          s.available = false;
           serverList.push(s);
         }
         callback();
