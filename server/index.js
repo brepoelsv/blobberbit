@@ -10,7 +10,7 @@ const debug = Debug('app');
 const http = process.env.MAIN ? app : Ogar();
 
 const ipaddress = process.env.IP || '127.0.0.1';
-const serverport = process.env.PORT || '4000';
+const serverport = process.env.PORT || '3000';
 models.sequelize.sync().then(() => {
   http.listen(serverport, ipaddress, () => {
     debug(`[DEBUG] Listening on ${ipaddress}:${serverport}`);
