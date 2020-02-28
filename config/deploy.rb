@@ -29,8 +29,8 @@ role :app,        "blobber.io"
 namespace :deploy do
   desc "Install node modules non-globally"
   task :npm_install do
-    run "bash -c '. /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm install node-sass@4.7.1'"
-    run "bash -c '. /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm install eslint@1.10.3'"
+    run "bash -c '. /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm install node-sass@3.4.2'"
+    run "bash -c '. /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm install eslint@4.4.1'"
     run "bash -c '. /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm install'"
   end
 
