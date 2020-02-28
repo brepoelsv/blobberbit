@@ -1,4 +1,4 @@
-node_modules
+node_modules/*
 .DS_Store
 dist
 *.log
@@ -7,3 +7,5 @@ coverage
 npm-debug.log
 bin
 server/assets.json
+*.log
+node_modules
