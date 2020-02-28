@@ -5,6 +5,8 @@ import spritesheetURL from '!!file?name=[path][name].[ext]!./sprite.json';
 
 let textures = {};
 
+PIXI.utils.skipHello();
+
 const loadPromise = new Promise(resolve => {
   PIXI.loader.add('sheet', spritesheetURL, {
     xhrType: 'json'

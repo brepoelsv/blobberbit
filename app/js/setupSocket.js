@@ -251,7 +251,7 @@ function drawChatBoard() {
     return;
   }
   const scaleFactor = Math.min(Math.max(canvasWidth / 1200, 0.75), 1); // scale factor = 0.75 to 1
-  canvasChat.width = 1E3 * scaleFactor;
+  canvasChat.width = 1300 * scaleFactor;
   canvasChat.height = 550 * scaleFactor;
   ctxChat.scale(scaleFactor, scaleFactor);
   const nowtime = Date.now();
@@ -432,11 +432,12 @@ Cell.prototype = {
   }
 };
 
-function rip() {
+function respawn() {
   vars.died = true;
   vars.playerType = 'player';
+  console.log('SetupSocket Respawn ' +  vars.playerType)
   vars.died = false;
-  startGame();
+  startGame('player');
   }
 
 
@@ -491,6 +492,7 @@ function ripold() {
       // }
     };
     vars.died = false;
+    console.log('SetupSocket RipOld ' +  vars.playerType)
   }, 1000);
 }
 
@@ -1408,11 +1410,13 @@ function onWsOpen() {
   }
   vars.disconnected = false;
   console.info('Connection successful!');
+  console.info('SetupSocket ' + vars.playerType);
 }
 
 function onWsClose() {
   vars.disconnected = true;
-  //console.log('Closed!!!');
+  console.log('Closed!!!');
+  console.info('SetupSocket ' + vars.playerType);
 }
 
 function onWsMessage(msg) {
@@ -1641,13 +1645,14 @@ export default () => {
         break;
       case 27: // esc
         if (vars.playerType === 'spectate') {
+          console.log(vars.playerType);
           toggleGameMenu(true);
         }
         if (vars.playerType === 'player') {
+          console.log(vars.playerType);
           vars.playerType = 'spectate';
-          startGame('spectate');
           toggleGameMenu(true);
-
+          startGame('spectate');
         }
 
         // showOverlays(true);

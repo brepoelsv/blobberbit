@@ -14,6 +14,7 @@
             width: 330px;
         }
     </style>
+    <script src="https://markknol.github.io/console-log-viewer/console-log-viewer.js"></script>
     <!--{{#production}} -->
     <!--script>
      var _rollbarConfig = {

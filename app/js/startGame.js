@@ -76,11 +76,17 @@ export function startGame(type) {
   //console.log("vars.socket==>",vars.socket, "vars.clearCache==>", vars.clearCache);
   if (type === 'player') {
     if (vars.gameStart) {
+      vars.playerType = 'player';
       toggleGameMenu(false);
       GAMESTAT.resetData();
     } else if (type === 'spectate') {
-      // vars.socket.emit('spectate', 'gameleader');
+       vars.socket.emit('spectate', 'gameleader');
       toggleGameMenu(false);
+    } else {
+      vars.playerType = 'player';
+      console.log('StartGame ' + vars.playerType);
+      toggleGameMenu(false);
+      GAMESTAT.resetData();
     }
   }
   if (vars.socket) {
@@ -110,6 +116,6 @@ export function startGame(type) {
   }
   if (!vars.animLoopHandle) {
     animloop();
-    // vars.socket.emit('respawn');
+     vars.socket.emit('respawn');
   }
 }
