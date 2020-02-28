@@ -9,3 +9,6 @@ bin
 server/assets.json
 *.log
 node_modules
+package-lock.json
+.vscode/settings.json
+package-lock.json
