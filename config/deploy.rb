@@ -8,7 +8,8 @@ set :application, "blobber.io"
 #require 'rollbar/capistrano'
 set :rollbar_token, '1481df46d8aa4eca82ea0e61d7d683ee'
 require           "capistrano-offroad"
-offroad_modules   "defaults", "supervisord"
+offroad_modules   "defaults"
+#, "supervisord"  brol van Sergey
 set :repository,  "git@github.com:brepoelsv/blobberbit.git"
 set :user, "blobber"
 set :port, 22
@@ -29,8 +30,6 @@ role :app,        "blobber.io"
 namespace :deploy do
   desc "Install node modules non-globally"
   task :npm_install do
-    run "bash -c '. /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm install node-sass@3.4.2'"
-    run "bash -c '. /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm install eslint@4.4.1'"
     run "bash -c '. /home/blobber/.nvm/nvm.sh && cd #{current_path} && npm install'"
   end
 
