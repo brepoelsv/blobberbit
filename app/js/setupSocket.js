@@ -1185,8 +1185,8 @@ function updateNodes(view, offset) {
   // ua && 0 == playerCells.length && showOverlays(false)
   if (vars.ua && 0 === objs.playerCells.length) {
     //console.log('Killed');
-    rip();
-    //respawn();
+    //rip();
+    respawn();
     // rip();  TOEVOEGEN AAN OPTIES BEGINSCHERM TODO
   }
 }

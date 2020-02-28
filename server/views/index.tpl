@@ -168,7 +168,7 @@
                         <!-- <input type="text" tabindex="0" autofocus placeholder="Image Link Imgur" id="playerAvatarInput" maxlength="250" class="uk-width-1-1 uk-margin-top" /> -->
                       </fieldset>
                 </form>
-                <div id="chooseServer" class="uk-panel uk-panel-box uk-margin-bottom uk-margin-top">
+              <!--   <div id="chooseServer" class="uk-panel uk-panel-box uk-margin-bottom uk-margin-top">
                     <div data-uk-dropdown="{mode:'click', pos:'right-center'}">
                         <button class="uk-button uk-width-1-1"><span id="currentServer">Servers</span><i class="uk-icon-caret-right uk-margin-small-left"></i></button>
                         <div class="uk-dropdown uk-dropdown-bottom">
@@ -176,6 +176,7 @@
                         </div>
                     </div>
                 </div>
+             -->
                 <button id="startButton" class="uk-button uk-width-1-1 uk-button-large uk-button-success uk-margin-bottom">Play</button>
                 <!-- <div class="uk-button-group uk-margin-bottom uk-flex uk-flex-center">
                     <a class="uk-button uk-contrast b-facebook" href="/login/facebook"> <i class="uk-icon-facebook uk-margin-small-right"></i>Facebook</a>
