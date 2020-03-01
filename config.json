@@ -2,7 +2,7 @@
   "foodMass": 1,
   "fireFood": 20,
   "limitSplit": 24,
-  "limitMaxMassPlayer": 20000,
+  "limitMaxMassPlayer": 9000,
   "defaultPlayerMass": 30,
   "defaultPlayerSprite": "default",
   "stepSpeed": 10000,
