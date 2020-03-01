@@ -434,10 +434,13 @@ Cell.prototype = {
 
 function respawn() {
   vars.died = true;
-  vars.playerType = 'player';
-  console.log('SetupSocket Respawn ' +  vars.playerType)
-  vars.died = false;
-  startGame('player');
+  vars.playerType = 'spectate';
+  window.setTimeout(() => {
+    vars.died = false;
+    toggleGameMenu(true);
+    vars.died = false;
+    startGame('spectate');
+  }, 500);
   }
 
 

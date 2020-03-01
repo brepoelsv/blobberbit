@@ -287,6 +287,8 @@
                 <ul><li>Mouse to move</li>
                 <li>Spacebar to Split</li>
                 <li>W to eject mass</li>
+                <li>ESC to menu</li>
+                
                     <!--<li>- + to zoom in/out</li>
                 <li>Mouse scroll to zoom in/out</li>--></ul>
             </div>

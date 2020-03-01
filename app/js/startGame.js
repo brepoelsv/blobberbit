@@ -90,6 +90,7 @@ export function startGame(type) {
     }
   }
   if (vars.socket) {
+    console.log(' Vars Socket closing');
     vars.socket.close();
     vars.socket = null;
     vars.clearCache = false;
@@ -99,23 +100,19 @@ export function startGame(type) {
   if (!vars.socket && vars.clearCache) {
     vars.socket = new WebSocket(vars.serverHost);
     vars.socket.binaryType = 'arraybuffer';
-    vars.clearCache = false;
-    cleanAllSocketCache();
+
     setupSocket();
-  } else if (type !== player.type) {
-    player.name = vars.playerName;
-    player.w = window.innerWidth;
-    player.h = window.innerHeight;
-    player.type = type;
-    player.avatar =  $('#playerAvatar')[0]._src;
-    // vars.socket.emit('forceupdate', player);
-  } else if (type === player.type){
-    vars.clearCache = false;
-    cleanAllSocketCache();
-    setupSocket();
+    let timer3 = setTimeout(function tick() {
+      if (document.getElementById('gameAreaWrapper')) {
+        document.getElementById('gameAreaWrapper').className = '';
+        clearTimeout(timer3);
+      } else {
+        timer3 = setTimeout(tick, 100);
+      }
+    }, 100);
   }
   if (!vars.animLoopHandle) {
     animloop();
-     vars.socket.emit('respawn');
+    // vars.socket.emit('respawn');
   }
 }
