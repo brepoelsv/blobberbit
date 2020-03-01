@@ -52,12 +52,15 @@ BotPlayer.prototype.decide = function (cell) {
       if (this.gameServer.gameMode.haveTeams && cell.owner.team == check.owner.team) {
         // Same team cell
         influence = 0;
-      } else if (cell._size > check._size * 1.15) {
+      } else if (cell._size > (check._size +4) * 1.15) {
         // Can eat it
         influence = check._size * 2.5;
       } else if (check._size > cell._size * 1.15) {
         // Can eat me
-        influence = -check._size;
+        influence = check._size * 2.5;
+      } else if (check._size + 4 > cell._size * 1.15) {
+          // Can eat me
+          influence = -check._size ;
       } else {
         influence = -(check._size / cell._size) / 3;
       }
