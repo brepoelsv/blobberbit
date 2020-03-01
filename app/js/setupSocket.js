@@ -434,9 +434,10 @@ Cell.prototype = {
 
 function respawn() {
   vars.died = true;
-  vars.playerType = 'spectate';
   window.setTimeout(() => {
-    vars.died = false;
+    startGame('spectate');
+  }, 200);
+  window.setTimeout(() => {
     toggleGameMenu(true);
     vars.died = false;
     startGame('spectate');
